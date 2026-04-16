@@ -191,9 +191,7 @@ NB_MODULE(shared_memory_bindings, module_handle) {
           })
       .def_prop_rw(
           "color_stereo_right_format",
-          [](dex::camera::CameraFrameBuffer& buffer) {
-            return std::string(buffer.color_stereo_right_format.data());
-          },
+          [](dex::camera::CameraFrameBuffer& buffer) { return std::string(buffer.color_stereo_right_format.data()); },
           [](dex::camera::CameraFrameBuffer& buffer, const std::string& fmt) {
             dex::camera::StringToArray(fmt, buffer.color_stereo_right_format);
           });
